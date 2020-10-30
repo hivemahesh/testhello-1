@@ -8,5 +8,15 @@ pipeline {
                 sh 'mvn clean compile'
              }
        }
+       stage('test stage'){
+         steps('Testing artifact'){
+                sh 'mvn test'
+         }
+       }
+       stage('Deployment stage'){
+         steps('Deployment artifact'){
+           sh 'mvn install'
+         }
+       }  
     }
 }
