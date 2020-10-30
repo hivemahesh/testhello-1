@@ -4,11 +4,9 @@ pipeline {
     stages {
         stage('Compile Stage'){
 
-            steps{
-                withMaven(maven : 'maven'){
-                    sh 'mvn clean compile'
-                }
-            }
+            steps('Build artifact'){
+                sh 'mvn clean compile'
+             }
        }
     }
 }
